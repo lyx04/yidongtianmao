@@ -1,0 +1,525 @@
+@import url(base.css);
+@import "mixin";
+
+@include useRem(720px);
+$list: today1, today2, today3;
+$lists: bihuo1, bihuo2, bihuo3, bihuo4, bihuo5, bihuo6, bihuo7, bihuo8,;
+.icon-tianmao:before {
+  content: "\e69f";
+}
+
+.icon-jifen:before {
+  content: "\e63b";
+}
+
+.icon-chongzhi:before {
+  content: "\e63b";
+}
+
+.icon-ju:before {
+  content: "\e668";
+}
+
+.icon-chaoshi:before {
+  content: "\e698";
+}
+
+.icon-shi:before {
+  content: "\e608";
+}
+
+.icon-huangjin:before {
+  content: "\e604";
+}
+
+.icon-iconfenlei:before {
+  content: "\e662";
+}
+
+@font-face {
+  font-family: "icon-font";
+  src: url(../font/ux_1476501850_455658/iconfont.woff);
+}
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  font-size: 16px;
+}
+
+//搜索开始
+#ch {
+  display: none;
+}
+
+.zhezhao div {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 2;
+  .off {
+    position: absolute;
+    right: 0.15rem;
+    top: 2.5rem;
+    color: #fff;
+    width: 10px;
+  }
+}
+
+.sousuo {
+  width: 100%;
+  height: 0.86rem;
+  background: linear-gradient(to bottom, #000004, transparent);
+  padding: 0.11rem 0.43rem 0.12rem 0.33rem;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  .list {
+    width: 0.51rem;
+    height: 0.41rem;
+    float: left;
+    margin-top: 0.12rem;
+    p {
+      float: left;
+      height: 100%;
+      font-family: icon-font;
+      font-size: 0.25rem;
+      color: #fff;
+      line-height: 0.41rem;
+    }
+  }
+  .sou {
+    width: 5.55rem;
+    height: 0.65rem;
+    float: left;
+    input {
+      margin: 0;
+      margin-top: 5px;
+      border: none;
+      padding: 0;
+      padding-left: 10px;
+      outline: none;
+      width: 85%;
+      height: 90%;
+      border-radius: 5px;
+      opacity: 0.6;
+    }
+  }
+}
+
+.sort {
+  width: 95%;
+  height: 100%;
+  background-color: #EEEEEE;
+  position: absolute;
+  left: -100%;
+  z-index:3;
+  transition: left 0.8s ease;
+  li {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    position: relative;
+  }
+  .title {
+    width: 100%;
+    height: 0.85rem;
+    background-color: #EEEEEE;
+    box-sizing: border-box;
+    border-top: 1px solid #DEDED9;
+    border-bottom: 1px solid #DEDED9;
+    line-height: 0.80rem;
+    h4 {
+      font-weight: normal;
+    }
+  }
+  .tuijian {
+    width: 16%;
+    height: 1.15rem;
+    background-color: #EEEEEE;
+    line-height: 1.3rem;
+    text-align: center;
+    font-size: 0.16rem;
+    &.active {
+      background-color: #fff;
+    }
+    .details {
+      position: absolute;
+      left: 100%;
+      background: red;
+      width: 5.3rem;
+      top: 0;
+      display: none;
+      h2 {
+        text-align: left;
+        margin-left: 10px;
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+#ch:checked ~ .sort {
+  left: 0;
+}
+
+#ch:checked ~ .zhezhao div {
+  display: block;
+}
+
+//搜索结束
+//banner开始
+#banner {
+  width: 100%;
+  height: 3.48rem;
+  .swiper-slide.swiper-slide-active {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+//banner结束
+//分栏开始
+.subfield {
+  width: 100%;
+  //height: 2.7rem;
+  padding: 0.19rem 0 0 0.28rem;
+  text-align: justify;
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+  }
+  li {
+    p {
+      width: 0.2rem;
+      font-size: 0.6rem;
+      font-family: icon-font;
+      position: absolute;
+      left: 0.2rem;
+      right: 0;
+      margin: auto;
+    }
+    span {
+      position: absolute;
+      width: 1.1rem;
+      bottom: 0;
+      font-size: 0.12rem;
+      text-align: right;
+    }
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    position: relative;
+    margin-right: 0.3rem;
+    margin-bottom: 0.12rem;
+  }
+}
+
+//分栏结束
+//hot开始
+.hot {
+  width: 100%;
+  height: 0.98rem;
+  //background-color:red;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EEEEEE;
+  border-top: 1px solid #EEEEEE;
+  padding: 0.22rem 0 0 0.14rem;
+  .zuo {
+    width: 1.13rem;
+    height: 100%;
+    box-sizing: border-box;
+    border-right: 2px solid #b5b5b5;
+    float: left;
+    background-image: url(../images/tiaomulogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .you {
+    width: 5.3rem;
+    height: 100%;
+    float: left;
+    padding-left: 0.6rem;
+    background-image: url(../images/tiaomu.png);
+    background-repeat: no-repeat;
+    background-position: 0.2rem, 0;
+    background-size: 0.32rem, 0.32rem;
+    #tiaomu {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      font-size: 0.14rem;
+    }
+  }
+}
+
+//hot结束
+//today开始
+.today {
+  width: 100%;
+  height: 2.04rem;
+  #today {
+    width: 100%;
+    height: 100%;
+    @each $i in $list {
+      .swiper-slide.#{$i} {
+        width: 3.32rem !important;
+        background-image: url("../images/" + $i + ".jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}
+
+//today结束
+//必火开始
+.bihuo {
+  width: 100%;
+  height: 5.82rem;
+  padding-top: 0.38rem;
+  .title {
+    width: 2.85rem;
+    height: 0.5rem;
+    margin: 0 auto;
+    span {
+      float: left;
+      color: red;
+    }
+    p {
+      float: left;
+      color: red;
+    }
+  }
+  .list {
+    width: 100%;
+    height: 5.1rem;
+    text-align: justify;
+    &::after {
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      content: ""
+    }
+    li {
+      width: 1.78rem;
+      height: 2.25rem;
+      float: left;
+      position: relative;
+      display: inline-block;
+      h3 {
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        color: #000;
+        font-size: 0.10rem;
+      }
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 0.1rem;
+        font-size: 0.12rem;
+        color: red;
+      }
+      s {
+        position: absolute;
+        bottom: 0;
+        left: 0.7rem;
+        font-size: 0.12rem;
+        color: #999999;
+      }
+    }
+    @each $i in $lists {
+      .#{$i} {
+        background-image: url("../images/" + $i + ".jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0, -0.1rem;
+      }
+    }
+  }
+}
+
+//必火结束
+//品牌开始
+.pinpai {
+  width: 100%;
+  height: 2.54rem;
+  .title {
+    width: 3.03rem;
+    height: 0.5rem;
+    margin: 0 auto;
+    span {
+      float: left;
+      color: #FF8205;
+    }
+    p {
+      float: left;
+      color: #FF8205;
+    }
+  }
+  .list {
+    width: 100%;
+    height: 1.96rem;
+    text-align: justify;
+    &::after {
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      content: ""
+    }
+    li {
+      width: 3.40rem;
+      height: 2.12rem;
+      float: left;
+      position: relative;
+      display: inline-block;
+    }
+    .pinpai1 {
+      background-image: url(../images/pinpai2.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .pinpai2 {
+      background-image: url(../images/pinpai.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+//品牌结束
+//资讯开始
+$zixun: zixun1, zixun2, zixun3, zixun4;
+.zixun {
+  width: 100%;
+  height: 5.59rem;
+  .title {
+    width: 3.03rem;
+    height: 0.5rem;
+    margin: 0 auto;
+    span {
+      float: left;
+      color: #12A591;
+    }
+    p {
+      float: left;
+      color: #12A591;
+    }
+  }
+  .list {
+    width: 100%;
+    height: 5.09rem;
+    text-align: justify;
+    &::after {
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      content: ""
+    }
+    li {
+      width: 2.38rem;
+      height: 3.36rem;
+      float: left;
+      position: relative;
+      display: inline-block;
+    }
+    @each $i in $zixun {
+      .#{$i} {
+        background-image: url("../images/" + $i + ".jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+    .zixun1 {
+      width: 100%;
+      height: 1.81rem;
+    }
+  }
+}
+
+//资讯结束
+$bianming: bianming, bianming1, bianming2;
+//便民开始
+.bianming {
+  width: 100%;
+  height: 3.24rem;
+  .title {
+    width: 3.03rem;
+    height: 0.5rem;
+    margin: 0 auto;
+    span {
+      float: left;
+      color: #12A591;
+    }
+    p {
+      float: left;
+      color: #12A591;
+    }
+  }
+  .list {
+    width: 100%;
+    height: 2.80rem;
+    text-align: justify;
+    &::after {
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      line-height: 0;
+      font-size: 0;
+      content: ""
+    }
+    li {
+      width: 4rem;
+      height: 1.40rem;
+      float: left;
+      position: relative;
+      display: inline-block;
+      margin-left:1px;
+    }
+    @each $i in $bianming {
+      @debug $i;
+      .#{$i} {
+        background-image: url("../images/" + $i + ".jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+    .bianming {
+      width: 3.18rem;
+      height: 2.8rem;
+    }
+  }
+}
+
+//便民结束
