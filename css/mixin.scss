@@ -55,12 +55,13 @@ $s-size: 480px;
 }
 
 @mixin useRem($device-size) {
-  $device-size-list:1306px,768px, 480px, 412px, 414px, 384px, 380px, 375px, 360px,320px,$device-size;
+  $device-size-list: 320px, 360px, 375px, 380px, 384px, 414px, 412px, 480px, $device-size;
   @each $list in $device-size-list {
-    @media screen and (max-width: #{$list}) {
+    @media screen and (min-width: #{$list}) {
       html {
         font-size: 100px * $list/$device-size;
       }
     }
   }
 }
+
